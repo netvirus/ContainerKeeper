@@ -1,0 +1,6 @@
+version: '3.8'
+
+services:
+  cache:
+    container_name: cache
+    image: redis:latest

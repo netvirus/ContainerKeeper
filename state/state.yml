@@ -1,0 +1,13 @@
+containers:
+  - container_name: web_server
+    description: "A web server container"
+    compose_file: web_server_compose.yml
+    status: enabled
+  - container_name: database
+    description: "A database container"
+    compose_file: database_compose.yml
+    status: enabled
+  - container_name: cache
+    description: "A cache container"
+    compose_file: cache_compose.yml
+    status: enabled

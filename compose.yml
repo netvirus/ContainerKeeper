@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  container_keeper:
+    container_name: ck_manager
+    image: container_keeper:latest
+    volumes:
+      - ./logs:/app/logs
+      - ./files:/app/files
+      - ./state:/app/state
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+    environment:
+      - CHECK_INTERVAL=60
+      - ACTION_INTERVAL=5
+      - API_PORT=8080
+      - API_HOST=0.0.0.0
+    ports:
+      - "8080:8080"
+    restart: always
